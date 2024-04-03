@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {padding: 0;
+    margin: 0;
+    text-decoration: none;
+   padding: 2px; }
+ body {font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}   
+ header {height: 100vh;
+         width: 100vw;
+         background-image: url(/src/sahra-dates-2.jpg);
+         background-size: cover;}
+ .navbar {position: absolute;padding: 50px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+         box-sizing: border-box;}  
+ .navbar .logo {font-size: 2em; font-weight: bold;} 
+  
+ .navbar .nav-links ul {list-style: none;
+       display: flex;}           
+ .navbar .nav-links ul li {margin: 0 20px; }
+ .navbar .menu-hamburger { display: none;
+                          position: absolute;
+                          width: 40px;
+                         top: 50px;
+                          right:50px;}
+ 
+ @media (max-width:900px) {
+   
+   .navbar {padding: 0;}
+   .navbar .nav-links ul li { margin: 30px 0;font-size: 1.5em; }
+   .nav-links {position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100vh;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               background-color: rgb(146, 140, 140,0.3);
+               backdrop-filter: blur(4px);
+               margin-left: -100%;
+               transition: all 0.7s ease; }
+    .nav-links ul {display: flex; flex-direction: column;
+                   align-items: center;}  
+                   .navbar .logo {position: absolute;
+                                  top: 50px; left: 50px;}                        
+ .navbar .menu-hamburger { display: block;}
+ }
+ .mobile-menu {margin: 0;}
+ 
+ .me-img {position: absolute;
+                         
+          border-radius: 10%;
+          top: 150px;
+          left: 40px;
+          opacity: 0.6; }
+  @media (max-width:650px)  { .me-img {margin-left: -100%; transition: all 2s ease}}       
+     /*button sign in and up style*/     
+    @import url("https://fonts.googleapis.com/css?family=Raleway");
+ 
+          :root {
+            --glow-color: hsl(186 100% 69%);
+          }
+          
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
+          
+          
+         
+          
+        
+          
+          .glowing-btn {
+            position: relative;
+            color: var(--glow-color);
+            cursor: pointer;
+            padding: 0.35em 0.5em;
+            border: 0.15em solid var(--glow-color);
+            border-radius: 0.45em;
+            background: none;
+            perspective: 1.5em;
+            font-family: "Raleway", sans-serif;
+            font-size: 1.5em;
+            font-weight: 50;
+            letter-spacing: 0.3em;
+          
+            -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+              0px 0px 0.5em 0px var(--glow-color);
+            -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+              0px 0px 0.5em 0px var(--glow-color);
+            box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+              0px 0px 0.5em 0px var(--glow-color);
+            animation: border-flicker 2s linear infinite;
+          }
+          
+          .glowing-txt {
+            float: left;
+            margin-right: -0.2em;
+            -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+              0 0 0.45em var(--glow-color);
+            -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+              0 0 0.45em var(--glow-color);
+            text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+            animation: text-flicker 3s linear infinite;
+          }
+          
+          .faulty-letter {
+            opacity: 0.5;
+            animation: faulty-flicker 2s linear infinite;
+          }
+          
+          .glowing-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0.7;
+            filter: blur(1em);
+            transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+            background: var(--glow-color);
+            pointer-events: none;
+          }
+          
+          .glowing-btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            z-index: -1;
+            background-color: var(--glow-color);
+            box-shadow: 0 0 2em 0.2em var(--glow-color);
+            transition: opacity 100ms linear;
+          }
+          
+          .glowing-btn:hover {
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: none;
+            animation: none;
+          }
+          
+          .glowing-btn:hover .glowing-txt {
+            animation: none;
+          }
+          
+          .glowing-btn:hover .faulty-letter {
+            animation: none;
+            text-shadow: none;
+            opacity: 1;
+          }
+          
+          .glowing-btn:hover:before {
+            filter: blur(1.5em);
+            opacity: 1;
+          }
+          
+          .glowing-btn:hover:after {
+            opacity: 1;
+          }
+          
+          @keyframes faulty-flicker {
+            0% {
+              opacity: 0.1;
+            }
+            2% {
+              opacity: 0.1;
+            }
+            4% {
+              opacity: 0.5;
+            }
+            19% {
+              opacity: 0.5;
+            }
+            21% {
+              opacity: 0.1;
+            }
+            23% {
+              opacity: 1;
+            }
+            80% {
+              opacity: 0.5;
+            }
+            83% {
+              opacity: 0.4;
+            }
+          
+            87% {
+              opacity: 1;
+            }
+          }
+          
+          @keyframes text-flicker {
+            0% {
+              opacity: 0.1;
+            }
+          
+            2% {
+              opacity: 1;
+            }
+          
+            8% {
+              opacity: 0.1;
+            }
+          
+            9% {
+              opacity: 1;
+            }
+          
+            12% {
+              opacity: 0.1;
+            }
+            20% {
+              opacity: 1;
+            }
+            25% {
+              opacity: 0.3;
+            }
+            30% {
+              opacity: 1;
+            }
+          
+            70% {
+              opacity: 0.7;
+            }
+            72% {
+              opacity: 0.2;
+            }
+          
+            77% {
+              opacity: 0.9;
+            }
+            100% {
+              opacity: 0.9;
+            }
+          }
+          
+          @keyframes border-flicker {
+            0% {
+              opacity: 0.1;
+            }
+            2% {
+              opacity: 1;
+            }
+            4% {
+              opacity: 0.1;
+            }
+          
+            8% {
+              opacity: 1;
+            }
+            70% {
+              opacity: 0.7;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+          
+          @media only screen and (max-width: 600px) {
+            .glowing-btn{
+              font-size: 1em;
+            }
+          }
+    /*end of buttons style*/      
+ .hero {padding-top: 170px;
+        display: grid; 
+        grid-template-columns:1fr 1fr 1fr ;}
+ .hero .info {
+   margin-top: 200px ; margin-left: 300px;
+         justify-content: start;
+         align-self: start;}      
+ .skills li{ display: block;
+         justify-content: center;
+         align-items: center;
+         padding:0 20px ;
+         color:white;}
+  h3{color:white; }
+ .button-91 {
+          color: #fff;
+          padding: 15px 25px;
+          background-color:rgb(85, 167, 167,0.3);
+          background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+          box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+          border-radius: 14px;
+          font-weight: bold;
+          font-size: 16px;
+         margin-left: 200px;
+          border: 0;
+        
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+        
+          cursor: pointer;
+        } 
+ h2 {padding: 10px 0;color:white;} 
+ @media (max-width:920px) {
+   .hero {display: flex; flex-direction: column;
+          justify-content: center;
+          align-items: center;
+         padding-top: 70px;
+         padding-left: 140px;}
+ } 
+@media (max-width:600px) {.me-img { width: 10rem; } }
+.Contact {display: grid;
+  grid-template-columns: 300px 1fr;}
+@media (min-width:1100px) {.main {display: grid;gap: 5px;
+        grid-template-columns:repeat(3,1fr) ;
+        grid-template-rows: repeat(2,1fr); }
+       }
+ @media ( max-width:1100px)   { .main {display:grid; grid-template-columns: 1fr 1fr; 
+                                         gap: 5px;   grid-template-rows: repeat(3,1fr);}}   
+@media (max-width:650px) { .main {display: flex;flex-direction: column; padding: 0 5px;}}
+.list {display: flex;justify-content: center;align-items: center;}
+.list li {padding: 0 10px;}
+@media (max-width:620px) { .Contact {display: block;}}
+@media (min-width:800px){
+.form {display: flex ; align-items: center;justify-content: space-between;}
+ input {border: rgb(39, 32, 32);
+             border-width: 10px;}   }
+ @media (max-width:800px)    {      
+.form {display: flex;flex-direction: column;justify-content: space-between;}  }
